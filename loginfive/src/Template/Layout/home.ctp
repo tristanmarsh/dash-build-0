@@ -21,8 +21,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+
     </title>
     <?= $this->Html->meta('icon') ?>
 
@@ -39,7 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <span>International Student House</span>
         </div>
         <div class="header-help">
-            <!--<span><a target="_blank" href="localhost/loginfive/index">Home</a></span>-->
+            <span><a target="_blank" href="localhost/loginfive/index">Home</a></span>
         </div>
     </header>
     <div id="container">
@@ -52,8 +51,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </div>
         </div>
         <footer>
-			<div style="position: absolute; bottom: 5px; left: 5px">
-			</div>
         </footer>
     </div>
 </body>
