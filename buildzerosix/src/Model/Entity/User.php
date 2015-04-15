@@ -4,6 +4,7 @@ namespace App\Model\Entity;
 
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
+use Cake\ORM\Rule\IsUnique;
 
 class User extends Entity
 {
@@ -18,6 +19,7 @@ class User extends Entity
         return (new DefaultPasswordHasher)->hash($password);
     }
 
+	
     // ...
 }
 ?>

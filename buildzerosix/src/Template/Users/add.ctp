@@ -12,6 +12,6 @@
     </fieldset>
     <?= $this->Form->button(__('Submit')); ?>
     <?= $this->Form->end() ?>
-    <p><strong>Developer Notes:</strong> New registers can have the same username as others, need to fix</p>
+    <p><strong>Developer Notes:</strong> Need a better way to tell users the name is already taken.</p>
 </div>
 

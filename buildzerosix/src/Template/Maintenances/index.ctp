@@ -21,7 +21,7 @@
         </td>
         <td>
 			<?php 
-				if ($article->user_id === $user['id'])
+				if ($article->user_id === $user['id'] OR $user['role'] === 'admin') // If the user owns it, or they are admin, they can see the actions
 				{
 					echo $this->Form->postLink(
 					'Delete',

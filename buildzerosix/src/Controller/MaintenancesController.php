@@ -1,13 +1,14 @@
 <?php
 // src/Controller/ArticlesController.php
 
+
 namespace App\Controller;
 
 use App\Controller\AppController;
 
 class MaintenancesController extends AppController
 {
-
+	
     public function initialize()
     {
         parent::initialize();
@@ -26,7 +27,7 @@ class MaintenancesController extends AppController
 		//The line sets the view variable called ‘articles’ equal to the return value of the find('all') method of the Articles table object.
         $this->set(compact('articles'));
         */
-
+		
         $this->set('elephant', $this->Maintenances->find('all'));
     }
 

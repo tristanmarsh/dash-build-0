@@ -15,6 +15,7 @@
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
+<?php $user = $this->Session->read('Auth.User'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,9 +37,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <header>
         <div class="header-title">
-            <span><?= $this->fetch('title') ?></span>
+            <span><?= $this->fetch('title') ?></span> 
+			<small><small>
+			<?php if ($this->Session->read('Auth.User'))
+			{
+				echo "Logged in as ";
+				echo $user['username'];
+			} 
+			?>
+			</small></small>
         </div>
-        <div class="header-help">
+		<div class="header-help">
             <span><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></span>
             <span><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></span>
         </div>

@@ -8,4 +8,8 @@
     echo $this->Form->input('description', ['rows' => '3']);
     echo $this->Form->button(__('Submit Request'));
     echo $this->Form->end();
+	echo $this->Form->create(null, [
+		'url' => ['controller' => 'Maintenances', 'action' => 'index']
+		]);
+	echo $this->Form->button(__('Cancel'));
 ?>
