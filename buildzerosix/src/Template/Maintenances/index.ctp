@@ -1,5 +1,5 @@
 <!-- File: src/Template/Articles/index.ctp -->
-
+<?php $user = $this->Session->read('Auth.User'); ?>
 <h1>List of Maintenance Requests</h1>
 <?= $this->Html->link('Add Maintenance Request', ['action' => 'add']) ?>
 <table>
@@ -20,12 +20,17 @@
             <?= $article->created->format(DATE_RFC850) ?>
         </td>
         <td>
-            <?= $this->Form->postLink(
-                'Delete',
-                ['action' => 'delete', $article->id],
-                ['confirm' => 'Are you sure?'])
-            ?>
-            <?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?>
+			<?php 
+				if ($article->user_id === $user['id'])
+				{
+					echo $this->Form->postLink(
+					'Delete',
+					['action' => 'delete', $article->id],
+					['confirm' => 'Are you sure?']);
+					echo " "; // this puts a space between Delete and Edit button
+					echo $this->Html->link('Edit', ['action' => 'edit', $article->id]);
+				};
+			?>
         </td>
     </tr>
     <?php endforeach; ?>
@@ -35,7 +40,7 @@
 <p>
 
 <?php 
-	$user = $this->Session->read('Auth.User');
+	
 	if($user['role'] === 'admin') {
 		echo "Only Admins can see this: ";
 		echo $this->Html->link('Manage Users', ['controller' => 'users', 'action' => 'index']);
