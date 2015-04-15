@@ -31,4 +31,23 @@
     <?php endforeach; ?>
 </table>
 <p>Click here to <?= $this->Html->link('Log Out', ['controller' => 'users', 'action' => 'logout']) ?>!</p>
-<p><br><br><br><br>Admin Area Only: <?= $this->Html->link('Manage Users', ['controller' => 'users', 'action' => 'index']) ?> <br><small>(Nothing will happen if you are not an admin)</small></p>
+
+<p>
+
+<?php 
+	$user = $this->Session->read('Auth.User');
+	if($user['role'] === 'admin') {
+		echo "Only Admins can see this: ";
+		echo $this->Html->link('Manage Users', ['controller' => 'users', 'action' => 'index']);
+	} 
+?>
+
+</p>
+
+
+
+
+
+
+
+
