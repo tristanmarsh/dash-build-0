@@ -4,6 +4,8 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\RulesChecker;
+use Cake\ORM\isUnique;
 
 class UsersTable extends Table
 {
@@ -12,6 +14,12 @@ class UsersTable extends Table
     {
         $this->addBehavior('Timestamp');
     }
+	
+	public function buildRules(RulesChecker $rules)
+	{
+		$rules->add($rules->isUnique(['username'], 'This username is already registered'));
+		return $rules;
+	}
 
     public function validationDefault(Validator $validator)
     {
