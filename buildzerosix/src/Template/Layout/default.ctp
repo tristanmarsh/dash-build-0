@@ -29,6 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('custom.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -62,6 +63,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </div>
         </div>
         <footer>
+
+            <div id="footer"></div>
+            © Team Dash
+
         </footer>
     </div>
 </body>
