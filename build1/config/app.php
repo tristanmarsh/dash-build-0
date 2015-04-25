@@ -219,9 +219,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'nonstandard_port_number',
-            'username' => 'buildzeroseven',
+            'username' => 'buildzeroeight',
             'password' => 'asdasd',
-            'database' => 'buildzeroseven',
+            'database' => 'buildzeroeight',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

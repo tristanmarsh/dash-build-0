@@ -38,6 +38,9 @@ class StudentsController extends AppController
         ]);
         $this->set('student', $student);
         $this->set('_serialize', ['student']);
+
+        $emergencyStudent = $this->Students->EmergencyStudent->find('all');
+        $this->set('emergencyStudent', $emergencyStudent);
     }
 
     /**

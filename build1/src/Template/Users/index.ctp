@@ -57,6 +57,12 @@
     <?php endforeach; ?>
 </table>
 
-<p> View Maintenance <?= $this->Html->link('Requests', ['controller' => 'maintenances', 'action' => 'index']) ?> </p>
-
+<p>
+    <?php
+        if($user['role'] === 'admin') {
+            echo "Only Admins can see this: Back to ";
+            echo $this->Html->link('Dashboard', ['controller' => 'dashboards', 'action' => 'index']);
+        }
+    ?>
+</p>
 

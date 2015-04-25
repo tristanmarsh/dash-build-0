@@ -38,16 +38,14 @@
 <p>Click here to <?= $this->Html->link('Log Out', ['controller' => 'users', 'action' => 'logout']) ?>!</p>
 
 <p>
-
-<?php 
-	
-	if($user['role'] === 'admin') {
-		echo "Only Admins can see this: ";
-		echo $this->Html->link('Manage Users', ['controller' => 'users', 'action' => 'index']);
-	} 
-?>
-
+    <?php
+    if($user['role'] === 'admin') {
+        echo "Only Admins can see this: Back to ";
+        echo $this->Html->link('Dashboard', ['controller' => 'dashboards', 'action' => 'index']);
+    }
+    ?>
 </p>
+
 
 
 
